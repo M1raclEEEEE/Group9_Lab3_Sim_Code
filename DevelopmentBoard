@@ -1,0 +1,26 @@
+`timescale 1ns / 1ns
+
+module DevelopmentBoard(
+    input wire clk, 
+    input wire reset, B2, B3, B4, B5,
+    output wire h_sync, v_sync,
+    output wire [15:0] rgb,
+	
+	output wire led1,
+	output wire led2,
+	output wire led3,
+	output wire led4,
+	output wire led5
+);
+
+	ShowLetter ShowLetter_inst(
+		.sys_clk(clk),
+		.sys_rst_n(reset),
+		.hsync(h_sync),
+		.vsync(v_sync),
+		.rgb(rgb)
+	);
+    
+
+
+endmodule
